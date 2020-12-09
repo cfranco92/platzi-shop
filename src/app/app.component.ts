@@ -60,7 +60,12 @@ export class AppComponent {
   public addItem() {
     this.items.push('nuevo item');
   }
+
   public deleteItem(index: number) {
     this.items.splice(index, 1);
+  }
+
+  public clickProduct(id: number) {
+    console.log('product', id);
   }
 }
