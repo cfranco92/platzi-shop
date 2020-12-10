@@ -1,6 +1,6 @@
-# PlatziShop
+# PlatziStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
 
 ## Development server
 
