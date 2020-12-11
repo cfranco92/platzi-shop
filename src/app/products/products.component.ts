@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../products.service';
 
 import { Product } from './../product.model';
 
@@ -9,9 +10,14 @@ import { Product } from './../product.model';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  products: Product[];
+
+  constructor(
+    private productsService: ProductsService
+  ) { }
 
   ngOnInit() {
+    this.getProducts();
   }
 
   clickProduct(id: number) {
@@ -19,4 +25,7 @@ export class ProductsComponent implements OnInit {
     console.log(id);
   }
 
+  public getProducts() {
+    this.products = this.productsService.getAllProducts();
+  }
 }
