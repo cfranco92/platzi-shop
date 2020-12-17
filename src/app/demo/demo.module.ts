@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ContactComponent } from './components/contact/contact.component';
+import { DemoComponent } from './components/demo/demo.component';
 
-import { ContactRoutingModule } from './contact-routing.module';
+import { DemoRoutingModule } from './demo-routing.module';
 import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
   declarations: [
-    ContactComponent,
+    DemoComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
-    ContactRoutingModule
+    DemoRoutingModule
   ]
 })
-export class ContactModule {
+export class DemoModule {
 
 }
