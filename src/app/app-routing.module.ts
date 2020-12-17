@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { ContactComponent } from './contact/components/contact.component';
 import { DemoComponent } from './demo/demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from './admin.guard';
-import { CartComponent } from './cart/components/cart.component';
 
 const routes: Routes = [
   {
@@ -29,7 +26,7 @@ const routes: Routes = [
       },
       {
         path: 'products/:id',
-        component: ProductDetailComponent
+        loadChildren: () => import('./product-detail/product-detail.module').then(m => m.ProductDetailModule)
       },
       {
         path: 'contact',
