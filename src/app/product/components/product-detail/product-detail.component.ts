@@ -31,4 +31,20 @@ export class ProductDetailComponent implements OnInit {
         this.product = product;
       })
   }
+  
+  createProduct() {
+    const newProduct: Product = {
+      id: '24',
+      title: 'New from Angular',
+      image: 'https://www.legami.com/dw/image/v2/BDSQ_PRD/on/demandware.static/-/Sites-legami-master-catalog/default/dw76b91c32/images_legami/zoom/PCB0001_1.jpg?sw=800&sh=800',
+      price: 30000,
+      description: 'New product'
+
+    }
+    this.productsService.createProduct(newProduct)
+      .subscribe(product => {
+        // this.product = product;
+        console.log(product);
+      })
+  }
 }
