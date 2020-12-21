@@ -34,8 +34,8 @@ export class ProductDetailComponent implements OnInit {
   
   createProduct() {
     const newProduct: Product = {
-      id: '24',
-      title: 'New from Angular',
+      id: '2',
+      title: 'Puto el que lo lea',
       image: 'https://www.legami.com/dw/image/v2/BDSQ_PRD/on/demandware.static/-/Sites-legami-master-catalog/default/dw76b91c32/images_legami/zoom/PCB0001_1.jpg?sw=800&sh=800',
       price: 30000,
       description: 'New product'
@@ -45,6 +45,27 @@ export class ProductDetailComponent implements OnInit {
       .subscribe(product => {
         // this.product = product;
         console.log(product);
+      })
+  }
+
+  updateProduct() {
+    const newProduct: Partial<Product> = {
+      title: 'Crazy Angular',
+      description: ':)'
+
+    }
+    this.productsService.updateProduct('2', newProduct)
+      .subscribe(product => {
+        // this.product = product;
+        console.log(product);
+      })
+  }
+
+  deleteProduct() {
+    this.productsService.deleteProduct('2')
+      .subscribe(rta => {
+        // this.product = product;
+        console.log(rta);
       })
   }
 }
