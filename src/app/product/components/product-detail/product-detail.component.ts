@@ -22,50 +22,47 @@ export class ProductDetailComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       const id = params.id;
       this.fetchProduct(id);
+      // this.product = this.productsService.getProduct(id);
     });
   }
 
   fetchProduct(id: string) {
     this.productsService.getProduct(id)
-      .subscribe(product => {
-        this.product = product;
-      })
+    .subscribe(product => {
+      this.product = product;
+    });
   }
-  
+
   createProduct() {
     const newProduct: Product = {
-      id: '2',
-      title: 'Puto el que lo lea',
-      image: 'https://www.legami.com/dw/image/v2/BDSQ_PRD/on/demandware.static/-/Sites-legami-master-catalog/default/dw76b91c32/images_legami/zoom/PCB0001_1.jpg?sw=800&sh=800',
-      price: 30000,
-      description: 'New product'
-
-    }
+      id: '222',
+      title: 'nuevo desde angular',
+      image: 'assets/images/banner-1.jpg',
+      price: 3000,
+      description: 'nuevo producto'
+    };
     this.productsService.createProduct(newProduct)
-      .subscribe(product => {
-        // this.product = product;
-        console.log(product);
-      })
+    .subscribe(product => {
+      console.log(product);
+    });
   }
 
   updateProduct() {
-    const newProduct: Partial<Product> = {
-      title: 'Crazy Angular',
-      description: ':)'
-
-    }
-    this.productsService.updateProduct('2', newProduct)
-      .subscribe(product => {
-        // this.product = product;
-        console.log(product);
-      })
+    const updateProduct: Partial<Product> = {
+      price: 555555,
+      description: 'edicion titulo'
+    };
+    this.productsService.updateProduct('2', updateProduct)
+    .subscribe(product => {
+      console.log(product);
+    });
   }
 
   deleteProduct() {
-    this.productsService.deleteProduct('2')
-      .subscribe(rta => {
-        // this.product = product;
-        console.log(rta);
-      })
+    this.productsService.deleteProduct('222')
+    .subscribe(rta => {
+      console.log(rta);
+    });
   }
+
 }
